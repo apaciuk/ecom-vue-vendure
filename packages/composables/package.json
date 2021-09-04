@@ -1,0 +1,31 @@
+{
+  "name": "@vue-storefront/vendure",
+  "version": "1.0.0-beta.1",
+  "sideEffects": false,
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.es.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "rimraf lib && rollup -c",
+    "dev": "rollup -c -w",
+    "precommit": "lint-staged",
+    "prepublish": "yarn build",
+    "test": "jest",
+    "update:check": "ncu",
+    "update:update": "ncu -u"
+  },
+  "dependencies": {
+    "@vue-storefront/vendure-api": "1.0.0-beta.1",
+    "@vue-storefront/core": "~2.3.4"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "1.0.0-beta.21"
+  },
+  "files": [
+    "lib/**/*",
+    "nuxt/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
